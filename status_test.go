@@ -1,4 +1,4 @@
-package go-status
+package gostatus
 
 import (
 	"testing"
