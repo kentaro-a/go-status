@@ -9,9 +9,9 @@ import (
 func main() {
 
 	masks := map[string]gostatus.BitMask{
-		"A": 0b00000001,
-		"B": 0b00000010,
-		"C": 0b00000100,
+		"A": gostatus.BIT_0,
+		"B": gostatus.BIT_1,
+		"C": gostatus.BIT_2,
 	}
 
 	st := gostatus.NewStatus(nil)

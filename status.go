@@ -4,6 +4,17 @@ import (
 	"fmt"
 )
 
+const (
+	BIT_0 BitMask = 1 << iota
+	BIT_1
+	BIT_2
+	BIT_3
+	BIT_4
+	BIT_5
+	BIT_6
+	BIT_7
+)
+
 type BitMask uint8
 
 type Status struct {

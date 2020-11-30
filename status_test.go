@@ -5,9 +5,9 @@ import (
 )
 
 var masks map[string]BitMask = map[string]BitMask{
-	"A": 0b00000001,
-	"B": 0b00000010,
-	"C": 0b00000100,
+	"A": BIT_0,
+	"B": BIT_1,
+	"C": BIT_2,
 }
 
 func TestNewStatus(t *testing.T) {
