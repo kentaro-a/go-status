@@ -15,15 +15,22 @@ func main() {
 	}
 
 	st := gostatus.NewStatus(nil)
-	fmt.Println(st.Bits())
-	fmt.Println(st.IsOn(masks["A"]))
-	fmt.Println(st.IsOn(masks["B"]))
-	fmt.Println(st.IsOn(masks["C"]))
+	fmt.Printf("[Initialized] bits: %s\n", st.Bits())
+	// [Initialized] bits: 00000000
 
 	st.On(masks["A"])
+	fmt.Printf("[Flag A is turned on] bits: %s\n", st.Bits())
+	// [Flag A is turned on] bits: 00000001
 
-	fmt.Println(st.Bits())
-	fmt.Println(st.IsOn(masks["A"]))
-	fmt.Println(st.IsOn(masks["B"]))
-	fmt.Println(st.IsOn(masks["C"]))
+	st.On(masks["B"] | masks["C"])
+	fmt.Printf("[Flag B,C are turned on] bits: %s\n", st.Bits())
+	// [Flag B,C are turned on] bits: 00000111
+
+	st.Off(masks["A"] | masks["C"])
+	fmt.Printf("[Flag A,C are turned off] bits: %s\n", st.Bits())
+	// [Flag A,C are turned off] bits: 00000010
+
+	st.Off(masks["B"])
+	fmt.Printf("[Flag B are turned off] bits: %s\n", st.Bits())
+	// [Flag B are turned off] bits: 00000000
 }
